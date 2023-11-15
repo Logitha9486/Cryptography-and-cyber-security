@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() 
+{
+    char text[10];
+    int key;
+
+    printf("Enter the text: ");
+    scanf("%s", text);
+    printf("Enter the key: ");
+    scanf("%d", &key);
+
+    printf("\nPLAIN TEXT: %s\nENCRYPTED/DECRYPTED TEXT: ", text);
+
+    for (int i = 0; text[i]; i++) {
+        char offset = isupper(text[i]) ? 'A' : 'a';
+        printf("%c", (text[i] - offset + key) % 26 + offset);
+    }
+
+return 0;
+
+}
