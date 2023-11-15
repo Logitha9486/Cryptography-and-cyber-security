@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdint.h>
+void des_encrypt(uint64_t *data, uint64_t *key) {
+    // Implement DES encryption here (omitted for simplicity)
+    // Replace this with your DES encryption logic.
+}
+
+void des_decrypt(uint64_t *data, uint64_t *key) {
+    // Implement DES decryption here (omitted for simplicity)
+    // Replace this with your DES decryption logic.
+}
+
+int main() {
+    // Replace these with your own key and plaintext
+    uint64_t key = 0x133457799BBCDFF1;
+    uint64_t plaintext =0x0123456789ABCDEF;
+    uint64_t ciphertext;
+    uint64_t decryptedtext;
+
+    // Encrypt
+    des_encrypt(&plaintext, &key);
+
+    // Decrypt
+    des_decrypt(&plaintext, &key);
+
+    printf("Original text: 0x%016llX\n", plaintext);
+    printf("Encrypted text: 0x%016llX\n", ciphertext);
+    printf("Decrypted text: 0x%016llX\n", decryptedtext);
+
+    return 0;
+}
