@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define SIZE 5
+
+void initializeTable(char table[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; ++i)
+        for (int j = 0; j < SIZE; ++j)
+            table[i][j] = ' ';
+}
+
+void printTable(char table[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j)
+            printf("%c ", table[i][j]);
+        printf("\n");
+    }
+}
+
+void buildTable(char table[SIZE][SIZE], char key[], int key_len) {
+    // Implement building the table with the key
+    // ... (your logic here)
+}
+
+void encrypt(char table[SIZE][SIZE], char plaintext[], int length) {
+    // Implement Playfair cipher encryption
+    // ... (your logic here)
+}
+
+int main() {
+    char table[SIZE][SIZE];
+    initializeTable(table);
+
+    int key_len;
+    printf("Enter the length of the Key: ");
+    scanf("%d", &key_len);
+
+    char key[key_len];
+    printf("Enter the Key: ");
+    scanf("%s", key);
+
+    buildTable(table, key, key_len);
+
+    printf("The table is as follows:\n");
+    printTable(table);
+
+    int length;
+    printf("\nEnter the length of plain text: ");
+    scanf("%d", &length);
+
+    char plaintext[length];
+    printf("Enter the Plain text: ");
+    scanf("%s", plaintext);
+
+    encrypt(table, plaintext, length);
+
+    return 0;
+}
